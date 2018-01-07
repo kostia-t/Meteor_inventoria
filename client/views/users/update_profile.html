@@ -1,0 +1,56 @@
+<template name="updateProfile">
+  <div class="row">
+    <div class="twelve columns">
+      <div class="profile" style="margin-top: 0em;">
+        <input type="file" id="photofileInput" style="display:none;">
+        <input type="file" id="coverfileInput" style="display:none;">
+        <a id="userBackground" class="profile-page-2-cover">
+            
+            {{#if coverSrc}} 
+            <img class="preload-image responsive-image" data-original="images/pictures/9.jpg" src="{{coverSrc}}" style="display: block;">
+            {{else}}
+            <img class="preload-image responsive-image" data-original="images/pictures/9.jpg" src="../images/pictures/5w.jpg" style="display: block;">
+            {{/if}}
+            
+        </a>
+        <a id="userPhoto" class="avatar avatar-extra-large avatar-circle avatar-center" style="margin-top:-5em;">
+            
+            {{#if imageSrc}}  
+                <img class="avatar-image" src="{{imageSrc}}" alt="avatar" onerror="this.style.display='none';">
+            {{else}}  
+                <img class="avatar-image" src="/images/profile.png" alt="avatar" onerror="this.style.display='none';"> 
+            {{/if}}
+            
+            <span class="avatar-initials" style="background-color: #aaa; color: #fff;">T</span>
+          </a>
+        <h1 class="text-center username" style="margin-bottom:1em;">@{{currentUser.username}}</h1>
+        <div id="socialMediaAccounts">
+        </div>
+        <form data-id="update-profile-form" style="
+    max-width: 500px; margin: auto auto; padding: 1em;">
+          <!-- <a href="#">Add Social Media Accounts</a> -->
+          <textarea class="u-full-width socialMedia" rows="1" placeholder="Add Social Media Accounts (separated by a comma)" data-id="addSocialMedia"></textarea>
+          <textarea class="u-full-width biography" placeholder="Write something about you..." data-id="biography">{{currentUser.biography}}</textarea>
+          <input type="submit" class="button-primary u-pull-right" value="Update profile">
+        </form>
+      </div>
+        <button id="logout" style="margin: 1em; float: right;">Log Out <i class="ion-log-out"></i></button>
+    </div>
+  </div>
+    <div class="footer footer-dark" style="background: white;">
+    <a href="index.html" class="footer-logo scale-hover"></a>
+    <p>
+        Simplicity and complexity packed into a beautiful,
+        feature filled, powerful, gorgeous mobile template.
+    </p>
+    <div class="footer-socials">
+        <a href="#" class="icon icon-round icon-xs facebook-bg"><i class="ion-social-facebook"></i></a>
+        <a href="#" class="icon icon-round icon-xs twitter-bg"><i class="ion-social-twitter"></i></a>
+        <a href="#" class="icon icon-round icon-xs google-bg"><i class="ion-social-googleplus"></i></a>
+        <a href="#" class="icon icon-round icon-xs phone-bg"><i class="ion-ios-telephone"></i></a>
+        <a href="#" class="icon icon-round icon-xs show-share-bottom bg-blue-light"><i class="ion-android-share"></i></a>
+    </div>
+    <div class="decoration"></div>
+    <p class="copyright-text">Copyright <span id="copyright-year"></span>. All Rights Reserved.</p>
+</div>
+</template>

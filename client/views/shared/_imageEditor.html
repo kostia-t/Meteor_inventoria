@@ -1,0 +1,87 @@
+<template name="imageEditor">
+
+
+<div class="container" style=" margin: 0px; width: 100%; max-width:100%;">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <h3>Demo:</h3> -->
+           <div class="img-container">
+          <img id="image" src="https://fengyuanchen.github.io/cropperjs/images/picture.jpg" alt="Picture">
+        </div>
+      </div>
+     
+    </div>
+    <div class="row" id="actions" style=" position: fixed !important; /* position: fixed; */ top: 5em; width: 100%;     padding-right: 1em;">
+      <div class="col-md-9 docs-buttons" style="padding-left: 1em;">
+        <!-- <h3>Toolbar:</h3> -->
+          <div class="btn-group" style=" bottom: 4em; position: fixed;">
+          <button type="button" class="btn btn-primary btn-imgcustom zoomOut" data-method="zoomOut" data-option="move" title="Move" style="">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.setDragMode(&quot;move&quot;)">
+              <span class="ion-ios-plus-outline"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom zoomIn" data-method="zoomIn" data-option="crop" title="Crop">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.setDragMode(&quot;crop&quot;)">
+              <span class="ion-ios-minus-outline"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="moveLeft" data-option="0.1" title="Zoom In">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(0.1)">
+              <span class="ion-ios-arrow-thin-left"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="moveRight" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-arrow-thin-right"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" style="    transform: scale(-1, 1);" data-method="rotateLeft" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-refresh-empty"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="rotateRight" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-refresh-empty"></span>
+            </span>
+          </button>
+
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="setDragModeCrop" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-crop"></span>
+            </span>
+          </button><button type="button" class="btn btn-primary btn-imgcustom" data-method="setDragModeMove" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-arrow-move"></span>
+            </span>
+          </button>
+        </div>
+        
+      <div class="btn-group">
+          <button type="button" class="btn btn-primary btn-imgcustom reset" data-method="reset" data-option="0.1" title="Zoom In" style=" float: right; ">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(0.1)">
+              <span class="ion-ios-loop-strong"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="zoom" data-option="-0.1" title="Zoom Out" style=" float: right; ">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-checkmark-empty"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="zoom" data-option="-0.1" title="Zoom Out" style=" float: left; ">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-upload-outline"></span>
+            </span>
+          </button>
+        </div>
+       
+
+
+      
+    </div>
+  </div> 
+    </div>
+    
+
+
+</template>

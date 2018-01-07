@@ -1,0 +1,11 @@
+<template name="content">
+
+<a class="show-gallery animate-zoom" href="/item/{{_id}}"
+	alt="img" title="Image Caption" data-sr-id="1"
+	style="visibility: visible; -webkit-transform: scale(1); opacity: 1; transform: scale(1); opacity: 1; -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s;">
+	<img class="preload-image responsive-image"
+	data-original="{{src}}" alt="img"
+	src="{{src}}" style="display: block;">
+</a>
+
+</template>

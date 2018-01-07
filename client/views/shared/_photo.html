@@ -1,0 +1,242 @@
+<template name="photo">
+<div class="-overlay -light-overlay" style="background: white; display:block; ">
+  <h1 class="Thick" Style="text-align: center; margin-top:1em; display:none;">PHOTO</h1>
+  <div class="content" style="margin-bottom: 0em;">
+    <div class="page-userlist profile-hdr-wrapper" style="-margin-top:1em;">
+        <div class="user-list-1 profile-hdr" style="margin-bottom:0em; height: 60px;">
+            <a href="/users/{{user._id}}" class="profilephoto" style=" float: left; margin-left: -10px; margin-top: 0px;">
+               {{#if imageSrc}} 
+                <img data-original="{{imageSrc}}" alt="img" class="preload-image animate-left animate-delay-200" src="{{imageSrc}}" data-sr-id="1" style="visibility: visible; transform: translateX(0px) scale(1); opacity: 1; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0.2s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0.2s; display: block; border: 0px; box-shadow: 0px 0px 10px dimgrey;">
+               {{else}}
+                <img data-original="/images/profile.png" alt="img" class="preload-image animate-left animate-delay-200" src="/images/profile.png" data-sr-id="1" style="visibility: visible; transform: translateX(0px) scale(1); opacity: 1; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0.2s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0.2s; display: block;">
+                
+               {{/if}}
+            </a>
+            <strong class="animate-left" data-sr-id="2" style="margin-left:0em; padding-left:1em; visibility: visible;  -webkit-transform: translateX(0) scale(1); opacity: 1;transform: translateX(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; font-weight: 300;     font-size: 14px; letter-spacing: 2px;">{{user.username}}</strong>
+            
+            {{#if isAuthor}}
+            
+                <a class="-bg-green-dark small-profile tags animate-right animate-delay-150 remove topprofile-btn" data-sr-id="13" style="; visibility: visible;  -webkit-transform: translateX(0) scale(1); opacity: 1;transform: translateX(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0.15s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0.15s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0.15s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0.15s; "><i class="ion-ios-trash-outline" aria-hidden="true"></i></a>
+
+                {{#if isEdit}}
+
+                    <a class="-bg-green-dark small-profile tags animate-right exitedit topprofile-btn" data-sr-id="14" style="; visibility: visible;  -webkit-transform: translateX(0) scale(1); opacity: 1;transform: translateX(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; "><i class="ion-ios-close-empty" aria-hidden="true"></i></a>
+
+                {{else}} 
+
+                    <a class="-bg-green-dark small-profile tags animate-right edit topprofile-btn" data-sr-id="14" style="; visibility: visible;  -webkit-transform: translateX(0) scale(1); opacity: 1;transform: translateX(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; "><i class="ion-ios-compose-outline" aria-hidden="true"></i></a>
+
+                {{/if}}
+            
+            {{else}}
+            
+             <a class="-bg-green-dark small-profile tags animate-right edit topprofile-btn" data-sr-id="14" style="; visibility: visible;  -webkit-transform: translateX(0) scale(1); opacity: 1;transform: translateX(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; "><i class="ion-ios-information-outline" aria-hidden="true"></i></a>
+            
+            
+            
+            {{/if}}
+            
+            
+            
+            
+            
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="six columns">
+      <img class="preload-image responsive-image" style="display: block; padding: 0em;" data-original="http://s3-us-west-2.amazonaws.com/imagescanvasbucket/images/d296d14a-d84d-40bc-879e-834f2061abc5.jpeg" alt="img" src="{{item.src}}" >
+      <div class="content" style="display:none;">
+        
+        {{#if isEdit}}  
+        <div class="small-profile exitedit tags">
+            <i class="ion-ios-close-empty" aria-hidden="true"></i>
+        </div>
+        {{else}}  
+        <div class="small-profile edit tags">
+            <i class="ion-ios-compose-outline" aria-hidden="true"></i>
+        </div>
+        {{/if}}
+          
+        <div class="small-profile remove tags">
+            <i class="ion-ios-trash-outline" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+    <div class="six columns">
+      <div class="content">
+         {{#if isEdit}}
+            <h1 class="thick" Style="text-align: left; font-size:1em; font-size: 2em; font-weight: 200; letter-spacing: 2px;">
+                <input type="text" class="input-text-line input-red-line inventory-cost inventory-description" style="font-size:1em; font-weight: 200;" value="{{item.description}}">
+            </h1>  
+            <h5 class="thin" Style="text-align: left; font-size: 1em; font-weight: 200; letter-spacing: 2px;">
+                <input type="text" class="input-text-line input-red-line inventory-cost price" value="{{item.price}}"> 
+            </h5>  
+        {{else}}
+            <h1 class="thick" Style="text-align: center; font-size:2em; font-size: 2em; font-weight: 200; letter-spacing: 2px;">{{item.description}}</h1>
+            <h5 class="thin" Style="text-align: center; font-size: 1em; font-weight: 200; letter-spacing: 2px;">${{item.price}}</h5>
+        {{/if}}
+          
+          
+       
+        
+      </div>
+        
+        
+      <div class="content">
+
+        <h4 class="thin">Tags</h4>
+        
+        <input type="text" class="input-text-line input-red-line inventory-tags" value="">  
+          
+        {{#if isEdit}}
+          
+        {{else}}
+          {{#each item.tags}}
+                <div class="small-profile tags">
+                    {{this}}
+                </div>
+            {{/each}}
+        {{/if}}
+          
+    	
+
+        <div class="decoration decoration-margins" style="display:none;"></div>
+
+        <h4 class="thin">Colors</h4>
+        
+          <input type="text" class="input-text-line input-red-line inventory-colors" value="">
+          {{#if isEdit}}
+            
+          {{else}}
+              {{#each item.colors}}
+                <div data-color="{{this}}" class="small-profile colors" style="background: {{this}}; border-radius:50%; width:3em; height:3em; margin: 0.25em; box-shadow: 0px 0px 15px {{this}}; padding:0.1em;">
+                   
+                </div>
+              {{/each}}
+          {{/if}}
+        
+        <div class="decoration decoration-margins" style="display:none;"></div>
+
+        <h4 class="thin" style="">Size</h4>
+        
+        {{#if isEdit}}
+          <input type="text" class="input-text-line input-red-line inventory-cost size" value="{{item.size}}">
+        {{else}}
+          <div class="small-profile" style="background: white; border-radius:5px;">
+            {{item.size}}
+        </div>
+        {{/if}}
+          
+        
+        
+          
+        <div class="decoration decoration-margins" style="display:none;"></div>
+
+        <h4 class="thin" style="">Location</h4>
+          {{#if isEdit}}
+            <input type="text" class="input-text-line input-red-line inventory-cost location" value="{{item.location}}">
+          {{else}}
+            <div class="small-profile colors" style="background: white;">
+                {{item.location}}
+            </div>
+          {{/if}}
+          
+          <h4 class="thin" style="">Additional Details</h4>
+          {{#if isEdit}}
+            <input type="text" class="input-text-line input-red-line inventory-cost location" value="{{item.additionalDetails}}">
+          {{else}}
+            
+            <h5 class="thin" Style="text-align: left; font-size: 1em; font-weight: 200! important; letter-spacing: 2px;">{{item.additionalDetails}}</h5>
+          {{/if}}
+          
+          {{#if isEdit}}
+            <a class="save tags" style="width:100%; background: rgba(0, 0, 0, 0); padding: 10px; border: 1px solid #EEEEEE; text-align:center;">Save</a>
+          {{else}}
+            
+          {{/if}}
+          
+          <!--
+          <h4 class="thin" style="">Similar Items</h4>
+          
+          {{#each items}}
+            <li style="display: inline-block;
+    -webkit-flex: none;
+    flex: none;
+    -width: 33.33%;
+    padding: 10px;
+    width: 49%;
+    max-width: none;
+    margin-bottom:0px;
+}"> <a class="show-gallery animate-zoom" href="/item/{{_id}}"
+              alt="img" title="Image Caption" data-sr-id="{{_id}}"
+              style="    display: block;
+    -padding: 13px 13px 0 13px;
+    background: #fff;
+                     -margin-left: 7.5px; -margin-right: 15px; -display:inline-block; -width:calc(100% / 2.25); visibility: visible; -webkit-transform: scale(1); opacity: 1; transform: scale(1); opacity: 1; -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s;">
+              <img class="preload-image responsive-image"
+              data-original="{{src}}" alt="img"
+              src="{{src}}" style="display: block;">
+                <h3 class="grid__item-title" style=" font-size: 1em; text-align: center; letter-spacing: 2px; color: black; font-weight: 300;
+">{{description}}</h3>
+                <h5 class="thin" Style="text-align: center; font-size: 1em; font-weight: 200; letter-spacing: 2px;">${{price}}</h5>
+             </a></li> 
+           
+           {{/each}}
+          -->
+          
+          
+
+      </div>
+  </div>
+</div> <!-- end row -->
+
+<div class="content">
+    
+ <h4 class="thin" style="">Similar Items</h4>
+          
+          {{#each items}}
+            <li style="display: inline-block;
+    -webkit-flex: none;
+    flex: none;
+    -width: 33.33%;
+    padding: 10px;
+    width: 49%;
+    max-width: none;
+    margin-bottom:0px;
+}"> <a class="show-gallery animate-zoom" href="/item/{{_id}}"
+              alt="img" title="Image Caption" data-sr-id="{{_id}}"
+              style="    display: block;
+    -padding: 13px 13px 0 13px;
+    background: #fff;
+                     -margin-left: 7.5px; -margin-right: 15px; -display:inline-block; -width:calc(100% / 2.25); visibility: visible; -webkit-transform: scale(1); opacity: 1; transform: scale(1); opacity: 1; -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s;">
+              <img class="preload-image responsive-image"
+              data-original="{{src}}" alt="img"
+              src="{{src}}" style="display: block;">
+                <h3 class="grid__item-title" style=" font-size: 1em; text-align: center; letter-spacing: 2px; color: black; font-weight: 300;
+">{{description}}</h3>
+                <h5 class="thin" Style="text-align: center; font-size: 1em; font-weight: 200; letter-spacing: 2px;">${{price}}</h5>
+             </a></li> 
+           
+           {{/each}}
+    
+ </div>  
+    
+</div>
+<div class="footer footer-dark" style="background: white;">
+    <a href="index.html" class="footer-logo scale-hover"></a>
+    <p>
+        
+    </p>
+    <div class="footer-socials">
+        <a href="#" class="icon icon-round icon-xs facebook-bg"><i class="ion-social-facebook"></i></a>
+        <a href="#" class="icon icon-round icon-xs twitter-bg"><i class="ion-social-twitter"></i></a>
+        <a href="#" class="icon icon-round icon-xs google-bg"><i class="ion-social-googleplus"></i></a>
+        <a href="#" class="icon icon-round icon-xs phone-bg"><i class="ion-ios-telephone"></i></a>
+        <a href="#" class="icon icon-round icon-xs show-share-bottom bg-blue-light"><i class="ion-android-share"></i></a>
+    </div>
+    <div class="decoration"></div>
+    <p class="copyright-text">Copyright <span id="copyright-year"></span>. All Rights Reserved.</p>
+</div>
+</template>

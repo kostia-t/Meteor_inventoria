@@ -1,0 +1,48 @@
+<template name="post">
+  <div class="row custom-post">
+    <div class="twelve columns">
+      {{#with post}}
+        <div class="post">
+          <div class="post-line-two" style="margin-bottom: 1em;">
+            <div class="post-line-two-left">
+              <a href="{{pathFor 'profile' _id=author._id}}" class="avatar avatar-extra-small avatar-circle u-pull-left">
+                
+                {{#if profileImage}}  
+                    <img class="avatar-image" src="{{profileImage}}" alt="avatar" onerror="this.style.display='none';">
+                {{else}}  
+                    <img class="avatar-image" src="/images/profile.png" alt="avatar" onerror="this.style.display='none';"> 
+                {{/if}}
+              </a>
+              <a href="{{pathFor 'profile' _id=author._id}}" class="u-pull-left author" style="letter-spacing: 2px; color: black;">@{{author.username}}</a>
+              <span class="fa {{#if author.status.online}} fa-circle presence online {{else}} fa-circle-o presence offline {{/if}} ">
+              </span>
+            
+              <div class="clear"></div>
+            </div> 
+            <div class="post-line-two-right">
+              <p class="u-pull-right formatted-date">{{formatDate createdAt}}</p>
+            </div>  
+          </div> 
+          {{#markdown}}{{body}}{{/markdown}}
+          <hr>
+          <div class="post-line-two">
+            <div class="post-line-two-left">
+              <button class="no-button" data-id="like-post" style="font-size: 1.5em; margin-left: 0px;">
+                <i class="ion-ios-heart-outline {{#if isLiked}}liked{{/if}}" aria-hidden="false"></i>{{likecount}}
+              </button>
+              <div class="clear"></div>
+            </div> 
+            <div class="post-line-two-right">
+              {{#if belongsPostToUser}}
+                <button class="u-pull-right no-button remove-post" data-id="remove-post" style="font-size: 1.5em;     margin-right: 0px;">
+                  <i class="ion-ios-trash-outline"></i>
+                </button>
+              {{/if}}
+              
+            </div>  
+          </div>   
+        </div>
+      {{/with}}
+    </div>
+  </div>
+</template>

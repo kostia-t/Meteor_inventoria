@@ -1,0 +1,105 @@
+.post {
+  padding: 10px;
+  border: 1px solid #EEEEEE;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hr {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  p.formatted-date, a.author {
+    color: #D5D5D5;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  .avatar {
+    margin-right: 5px;
+  }
+  .highlight-username {
+    background: #FFEDCA;
+  }
+  margin-bottom: 20px;
+  .post-line-two {
+    display: flex; 
+	flex-direction: row; 
+	justify-content: space-between;  
+    .post-line-two-left,
+    .post-line-two-right {
+      display: flex; 
+	  align-items: center;   
+    }
+    .fa-thumbs-o-up {
+      margin-right: 2px;
+      &.liked {
+        color: #1EAEDB;
+      }   
+    }
+    .remove-post {
+      margin-left: 0px;
+      margin-right: 10px; 
+    }
+    [data-id="remove-post"],
+    [data-id="like-post"] {
+      font-size: 14px; 
+    }
+  }
+   
+}
+
+form.search-posts-form {
+  margin-bottom: 0;
+  input {
+    margin-bottom: 0;
+  }
+}
+
+ul.feed-filter {
+  list-style: none;
+  margin-bottom: 0;
+  display: inline-block;
+  li {
+    float: left;
+    margin-bottom: 0;
+    margin-right: 10px;
+    button {
+      margin-bottom: 0;
+      &.active {
+        background: rgba(0, 0, 0, .1);
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+textarea {
+  &.insert-post-form {
+    min-height: 39px;
+    text-align: left;
+  }
+  &.message-body-form {
+    min-height: 200px;
+  }
+}
+
+[data-id="insert-post-form"] {
+  .-autocomplete-container {
+    text-align:left !important;
+    margin-top: 15px;
+  }
+  input[type="submit"].disabled,
+  input[type="submit"].disabled:hover {
+    opacity: 0.3;
+    cursor: default;
+    background-color: #33C3F0;
+    border-color: #33C3F0;
+  }
+}
+
+@media (max-width: 480px) and (min-width: 320px){
+    .post {
+        border: 0px solid #EEEEEE;
+    }
+}

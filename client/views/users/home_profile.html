@@ -1,0 +1,91 @@
+<template name="home_profile">
+  <div class="row">
+    <div class="twelve columns">
+      <div class="profile">
+        
+        <div class="profile-page-2 full-bottom">
+          
+        <a class="profile-page-2-cover">
+            {{#if coverSrc}} 
+            <img class="preload-image responsive-image" data-original="images/pictures/9.jpg" src="{{coverSrc}}" style="display: block;">
+            {{else}}
+            <img class="preload-image responsive-image" data-original="images/pictures/9.jpg" src="../images/pictures/5w.jpg" style="display: block;">
+            {{/if}}
+        </a>
+        
+        <div class="profile-page-2-thumbnail animate-top" data-sr-id="3" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; border: 0px;
+        box-shadow: 0px 0px 15px dimgrey; ">
+            {{#with user}} 
+            <img class="preload-image responsive-image" data-original="//images/pictures/6t.jpg" src="//images/pictures/6t.jpg" style="display: none;">
+            
+            <a id="userPhoto" class="avatar avatar-extra-large avatar-circle avatar-center" href="{{pathFor 'updateProfile'}}">
+            
+            {{#if imageSrc}}  
+                <img class="avatar-image" src="{{imageSrc}}" alt="avatar" onerror="this.style.display='none';">
+            {{else}}  
+                <img class="avatar-image" src="/images/profile.png" alt="avatar" onerror="this.style.display='none';"> 
+            {{/if}}
+            
+            <span class="avatar-initials" style="background-color: #aaa; color: #fff;">T</span>
+          </a>
+            {{/with}} 
+        </div>
+        <div class="content">
+        {{#with user}} 
+            <div class="profile-page-2-header">
+                <h1 class="animate-fade animate-delay-50" data-sr-id="4" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0.05s, opacity 0.5s ease-in-out 0.05s; transition: transform 0.5s ease-in-out 0.05s, opacity 0.5s ease-in-out 0.05s; ">@{{user.username}}<span class="text-center fa {{#if user.status.online}} fa-circle presence online {{else}} fa-circle-o presence offline {{/if}} "></span></h1>
+                <em class="animate-fade animate-delay-100" data-sr-id="5" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0.1s, opacity 0.5s ease-in-out 0.1s; transition: transform 0.5s ease-in-out 0.1s, opacity 0.5s ease-in-out 0.1s; display: none;">Hardcore Skater</em>
+                <strong class="animate-fade animate-delay-150" data-sr-id="6" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0.15s, opacity 0.5s ease-in-out 0.15s; transition: transform 0.5s ease-in-out 0.15s, opacity 0.5s ease-in-out 0.15s; visibility:hidden;"><i class="ion-ios-location"></i>USA, California</strong>
+                <p class="animate-fade animate-delay-200" data-sr-id="7" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0.2s, opacity 0.5s ease-in-out 0.2s; transition: transform 0.5s ease-in-out 0.2s, opacity 0.5s ease-in-out 0.2s; ">
+                    {{user.biography}} 
+                </p>
+                
+                 <div class="text-center">
+                    {{> followButton user=this}}
+                </div>
+               
+            </div>
+        {{/with}}
+        </div>
+
+        <div class="profile-page-2-content">
+            <div class="decoration animate-fade" data-sr-id="9" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; transition: transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; "></div>
+            <div class="social-count">
+                <h1 class="animate-left" data-sr-id="1" style="; visibility: visible;  -webkit-transform: translateX(0) scale(1); opacity: 1;transform: translateX(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; -margin-bottom: 0em; "><a href="{{pathFor 'follower'}}" style="letter-spacing: 2px; color: black;"><strong>{{followerCount}}</strong><em>Followers</em></a></h1>
+                <h1 class="animate-fade" data-sr-id="10" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; transition: transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; -margin-bottom: 0em;"><a href="{{pathFor 'following'}}" style="letter-spacing: 2px; color: black;"><strong>{{followingCount}}</strong><em>Following</em></a></h1>
+                <h1 class="animate-right" data-sr-id="2" style="; visibility: visible;  -webkit-transform: translateX(0) scale(1); opacity: 1;transform: translateX(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; -margin-bottom: 0em;"><a style="letter-spacing: 2px; color: black;"><strong>{{items.count}}</strong><em>Items</em></a></h1>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    <div class="gallery-blocks">
+      {{#each items}}
+        <a class="show-gallery animate-fade" href="/item/{{_id}}" alt="img" title="Image Caption" data-sr-id="15" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; transition: transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; ">
+          <em class="overlay"></em>
+            <strong>{{description}}</strong>
+            <img class="preload-image responsive-image" data-original="{{src}}" alt="img" src="{{src}}" style="display: block;">
+        </a>
+        {{/each}}
+        <div class="clear"></div>
+    </div>
+            
+          </div>
+          
+        
+        
+      </div>
+    </div>
+  </div>
+    <div class="footer footer-dark" style="background: white;">
+    <a href="index.html" class="footer-logo scale-hover"></a>
+   
+    <div class="footer-socials">
+        <a href="#" class="icon icon-round icon-xs facebook-bg"><i class="ion-social-facebook"></i></a>
+        <a href="#" class="icon icon-round icon-xs twitter-bg"><i class="ion-social-twitter"></i></a>
+        <a href="#" class="icon icon-round icon-xs google-bg"><i class="ion-social-googleplus"></i></a>
+        <a href="#" class="icon icon-round icon-xs phone-bg"><i class="ion-ios-telephone"></i></a>
+        <a href="#" class="icon icon-round icon-xs show-share-bottom bg-blue-light"><i class="ion-android-share"></i></a>
+    </div>
+    <div class="decoration"></div>
+</div>
+</template>

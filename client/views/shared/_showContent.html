@@ -1,0 +1,30 @@
+<template name="showContent"> 
+
+<div class="content half-bottom">
+	<div class="gallery gallery-square no-bottom">
+		
+		
+		{{#each userContentGridItems}}  
+ 
+ 			{{> content}}
+ 
+ 		{{/each}}
+ 
+ 
+		 {{#if Template.subscriptionsReady}}
+		     {{#unless instance.resourceCount.get}}
+		       <div class="alert info" style="display:none;">There are no matching content to display</div>
+		     {{/unless}}
+		     {{#if hasMoreContent}}
+		       <button class="u-full-width" data-id="load-more">Load more</button>
+		     {{/if}}
+		   {{else}}
+		     <div class="text-center">Loading content...</div>
+		  {{/if}}
+		
+		
+	</div>
+</div>
+        
+        
+</template>

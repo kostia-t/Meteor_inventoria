@@ -1,0 +1,205 @@
+<template name="addToInventory">
+
+<div id="image-editor" class="container" style=" margin: 0px; width: 100%; max-width:100%; background: #4c4e50; visibility:hidden; position:absolute; z-index:0; max-height:620px;">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <h3>Demo:</h3> -->
+           <div class="img-container">
+          <img id="image" crossorigin="anonymous" src="" alt="Picture">
+        </div>
+      </div>
+     
+    </div>
+    <div class="row" id="actions" style=" position: fixed !important; /* position: fixed; */ top: 5em; width: 100%;     padding-right: 1em;">
+      <div class="col-md-9 docs-buttons" style="padding-left: 1em;">
+        <!-- <h3>Toolbar:</h3> -->
+          <div class="btn-group" style=" bottom: 4em; position: fixed;">
+          <button type="button" class="btn btn-primary btn-imgcustom zoomOut" data-method="zoomOut" data-option="move" title="Move" style="">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.setDragMode(&quot;move&quot;)">
+              <span class="ion-ios-plus-outline"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom zoomIn" data-method="zoomIn" data-option="crop" title="Crop">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.setDragMode(&quot;crop&quot;)">
+              <span class="ion-ios-minus-outline"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="moveLeft" data-option="0.1" title="Zoom In">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(0.1)">
+              <span class="ion-ios-arrow-thin-left"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="moveRight" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-arrow-thin-right"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" style="    transform: scale(-1, 1);" data-method="rotateLeft" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-refresh-empty"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="rotateRight" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-refresh-empty"></span>
+            </span>
+          </button>
+
+          <button type="button" class="btn btn-primary btn-imgcustom" data-method="setDragModeCrop" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-crop"></span>
+            </span>
+          </button><button type="button" class="btn btn-primary btn-imgcustom" data-method="setDragModeMove" data-option="-0.1" title="Zoom Out">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-arrow-move"></span>
+            </span>
+          </button>
+        </div>
+        
+      <div class="btn-group">
+          <button type="button" class="btn btn-primary btn-imgcustom reset" data-method="reset" data-option="0.1" title="Zoom In" style=" float: right; ">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(0.1)">
+              <span class="ion-ios-loop-strong"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom getCropped" data-method="save" data-option="-0.1" title="Zoom Out" style=" float: right; ">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-checkmark-empty"></span>
+            </span>
+          </button>
+          <button type="button" class="btn btn-primary btn-imgcustom select-new-item-photo" data-method="zoom" data-option="-0.1" title="Zoom Out" style=" float: left; ">
+            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="cropper.zoom(-0.1)">
+              <span class="ion-ios-upload-outline"></span>
+            </span>
+          </button>
+        </div>
+       
+
+
+      
+    </div>
+  </div> 
+    </div>
+<div id="inventory-form" class="container" style=" margin: 0px; width: 100%; max-width:100%;">
+    <div class="one-half photo-wrapper">
+    	<input type="file" id="fileInput" style="display:none;" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+    	<a class="select-new-item select-new-item-photo"><i class="ion-ios-camera-outline" aria-hidden="true"></i></a>
+	</div>
+	<div class="one-half last-column barcode-wrapper" style="border-left: 1px solid;">
+    	<a class="select-new-item select-new-item-barcode"><i class="ion-ios-barcode-outline" aria-hidden="true"></i><span style="
+    font-size: 20px; margin: auto auto; position: absolute; bottom: 0px; right: 0px; font-weight: lighter;
+">{{barcode}}</span></a>
+	</div>
+	<div class="clear"></div>
+    <div class="decoration decoration-margins"></div>
+    <div class="clear"></div>
+	<div id="fileDisplayArea" style="margin-bottom:2em;">
+        <img src={{photo}} />
+    </div>
+    
+    <div class="clear"></div>
+
+    
+    <div style="padding:1.5em;">
+    
+      <h3 class="thin center" style="display:none;">Photo* = {{photo}}</h3>
+        
+        
+      <h3 class="thin center">Colors</h3>
+      <input type="text" class="input-text-line input-red-line inventory-colors" value="">
+
+    </div>
+    <div class="decoration decoration-margins"></div>
+    <div style="padding:1.5em;">
+      <h3 class="thin center">Tags</h3>
+    	<input type="text" class="input-text-line input-red-line inventory-tags" value="">
+
+    </div>
+    <div class="decoration decoration-margins"></div>
+    <div style="padding:1.5em;">
+      <h3 class="thin center">Description*</h3>
+    	<input type="text" class="input-text-line input-red-line inventory-description description" value="">
+    </div>
+    <div class="clear"></div>
+    <div class="decoration decoration-margins"></div>
+
+    <div style="padding:1.5em;">
+    <div  class="inventory-additional-details" style="padding:1.5em;">
+      <h3 class="thin center">Size</h3>
+      <input type="text" class="input-text-line input-red-line inventory-size size" value="">
+    </div>
+
+    <div class="inventory-additional-details" style="padding:1.5em;">
+      <h3 class="thin center">Price</h3>
+      <input type="text" class="input-text-line input-red-line inventory-cost price" value="">
+    </div>
+
+    <div class="inventory-additional-details" style="padding:1.5em;">
+      <h3 class="thin center">Location</h3>
+      <input type="text" class="input-text-line input-red-line inventory-cost location" value="">
+    </div>
+
+    <div class="inventory-additional-details" style="padding:1.5em;">
+      <h3 class="thin center">Quantity*</h3>
+      <input type="number" class="input-text-line input-red-line inventory-cost quantity" value="">
+    </div>
+
+    <div class="" style="padding:1.5em;">
+      <h3 class="thin center">Date Purchased</h3>
+      <input type="date" class="input-text-line input-red-line inventory-cost purchaseDate" value="Date">
+    </div>
+    </div>
+
+
+    <div style="padding:1.5em;">
+      <h3 class="thin center">Additional Details</h3>
+    	<input type="text" class="input-text-line input-red-line inventory-description details" value="">
+    </div>
+
+   
+     <div class="content">
+        <a class="save tags upload-item-resource button--moema" style="width:100%; -background: rgba(0, 0, 0, 0); padding: 10px; border: 1px solid #EEEEEE; text-align:center;">Save</a>
+     </div>
+    
+    <div class="content">
+        <h3 class="thin center">Similar Items</h3>
+   </div>
+   <div class="content half-bottom">
+   	<div class="gallery gallery-square no-bottom">
+
+   {{#each items}}
+     <a class="show-gallery animate-zoom" href="images/pictures/0.jpg"
+      alt="img" title="Image Caption" data-sr-id="1"
+      style="visibility: visible; -webkit-transform: scale(1); opacity: 1; transform: scale(1); opacity: 1; -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s;">
+      <img class="preload-image responsive-image"
+      data-original="{{src}}" alt="img"
+      src="{{src}}" style="display: block;">
+     </a>
+   {{/each}}
+
+ </div>
+ </div>
+ </div>
+
+
+   <!--<div class="site-action left">
+   	<a class="upload-item-resource" style="width:100%; height:100%; text-align: center; font-size: 2em; vertical-align: middle; margin-top: 0.65em;" hrer="addItem"><i class="fa fa-floppy-o" aria-hidden="true"></i></a>
+   </div> -->
+    
+    <div id="inventory-footer" class="footer footer-dark" style="background: white;">
+    <a href="index.html" class="footer-logo scale-hover"></a>
+    <p>
+        
+    </p>
+    <div class="footer-socials">
+        <a href="#" class="icon icon-round icon-xs facebook-bg"><i class="ion-social-facebook"></i></a>
+        <a href="#" class="icon icon-round icon-xs twitter-bg"><i class="ion-social-twitter"></i></a>
+        <a href="#" class="icon icon-round icon-xs google-bg"><i class="ion-social-googleplus"></i></a>
+        <a href="#" class="icon icon-round icon-xs phone-bg"><i class="ion-ios-telephone"></i></a>
+        <a href="#" class="icon icon-round icon-xs show-share-bottom bg-blue-light"><i class="ion-android-share"></i></a>
+    </div>
+    <div class="decoration"></div>
+    <p class="copyright-text">Copyright <span id="copyright-year"></span>. All Rights Reserved.</p>
+</div>
+
+</template>

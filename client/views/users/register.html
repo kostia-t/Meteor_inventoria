@@ -1,0 +1,45 @@
+<template name="register">
+    
+    
+    <div id="page-content" class="header-clear" style="transition: all 500ms ease; min-height: 705px;">
+    <form id="register-form" action="action">
+    <div class="page-login content">
+        <a href="#" class="page-login-logo"><img class="preload-image" data-original="images/preload-logo.png" alt="img" src="images/preload-logo.png" style="display: block;"></a>
+        <div class="page-login-input">
+            <i class="login-icon ion-person"></i>
+            <input id="account-username" type="text" value="Username" onfocus="if (this.value=='Username') this.value = ''" onblur="if (this.value=='') this.value = 'Username'">
+        </div>                   
+
+        <div class="page-login-input">
+            <i class="login-icon ion-at"></i>
+            <input id="account-email" type="text" value="Email Address" onfocus="if (this.value=='Email Address') this.value = ''" onblur="if (this.value=='') this.value = 'Email Address'">
+        </div>                     
+        <div class="page-login-input">
+            <i class="login-icon ion-locked"></i>
+            <input id="account-password" type="password" value="password" onfocus="if (this.value=='password') this.value = ''" onblur="if (this.value=='') this.value = 'password'">               
+        </div>                
+        <div class="page-login-input full-bottom">
+            <i class="login-icon ion-locked"></i>
+            <input id="account-confirm" type="password" value="password" onfocus="if (this.value=='password') this.value = ''" onblur="if (this.value=='') this.value = 'password'">
+        </div>
+
+        
+        <input type="submit" id="create-account" value="Create an Account" class="button button-green button-icon button-full half-top full-bottom"/>
+
+        <div class="decoration"></div>
+
+        
+
+      
+
+        <a href="/sign-in" class="button button-blue button-icon button-full half-top full-bottom"><i class="ion-person"></i>Login Here</a>           
+    </div>
+
+    <div class="decoration decoration-margins"></div>
+
+    
+    </form>
+</div>
+    
+    
+</template>

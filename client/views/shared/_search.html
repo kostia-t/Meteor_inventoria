@@ -1,0 +1,150 @@
+<template name="search">
+
+<div class="row">
+  <div class="twelve columns">
+    <form class="search-posts-form" data-id="search-posts-form">
+      <input id="search-query" type="text" class="u-full-width" style="height: 60px; line-height: 60px;" placeholder="Search inventory..." data-id="search-query">
+    </form>
+  </div>
+</div>
+<div class="decoration decoration-margins"></div>
+
+<div class="content">
+      <div class="category-nav-filter">
+        <a class="category-hide-menu ">
+      	   <span><i class="fa fa-angle-left"></i> Hide Menu</span>
+      	</a>
+      </div>
+</div>
+
+<div class="content">
+      <div class="row">
+        <div id="search-category-menu" class="three columns">
+
+          <div class="content">
+          <!-- <div class="accordion-item accordion-ghost last-accordion-item">
+              <a href="#" class="accordion-toggle">Categories<i class="fa fa-plus"></i></a>
+              <div class="accordion-content ">
+                  <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+              </div>
+          </div> -->
+          <div class="accordion-item accordion-ghost last-accordion-item">
+              <a href="#" class="accordion-toggle">Size <i class="fa fa-plus"></i></a>
+              <div class="accordion-content ">
+                  <p>
+                    <div class="content no-bottom">
+        <div class="">
+            <div class="checkboxes-demo">
+                
+                
+                {{#each allItems}}
+                <a data-size="{{this}}" class="small-profile colors selectedsizes" style="">
+                          {{this}}
+                        </a>
+                {{/each}}
+                
+            </div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+
+                  </p>
+              </div>
+          </div>
+          <div class="accordion-item accordion-ghost last-accordion-item">
+              <a href="#" class="accordion-toggle">Color <i class="fa fa-plus"></i></a>
+              <div class="accordion-content ">
+                  <p>
+                    {{#each colors}}
+                        <a data-color="{{this}}" class="small-profile colors selectedcolors" style="background: {{this}}; border-radius:50%; width: 3em; height: 3em;">
+
+                        </a>
+                    {{/each}}
+                  </p>
+              </div>
+          </div>
+          <div class="accordion-item accordion-ghost last-accordion-item">
+              <a href="#" class="accordion-toggle">Tags <i class="fa fa-plus"></i></a>
+              <div class="accordion-content ">
+                  <p>
+                    {{#each tags}}
+                        <a data-tags="{{this}}" class="small-profile colors selectedtags" style="">
+                          {{this}}
+                        </a>
+                    {{/each}}
+                  </p>
+              </div>
+          </div>
+          <div class="accordion-item accordion-ghost last-accordion-item">
+              <a href="#" class="accordion-toggle">Price <i class="fa fa-plus"></i></a>
+              <div class="accordion-content ">
+                  <p>
+                    <ul class="font-icon-list no-bottom">
+                      <li><a data-lower="0" data-upper="25" class="selectedPrice">Under 25</a></li>
+                      <li><a data-lower="25" data-upper="50" class="selectedPrice">$25 - $50</a></li>
+                      <li><a data-lower="50" data-upper="75" class="selectedPrice">$50 - $75</a></li>
+                      <li><a data-lower="75" data-upper="100" class="selectedPrice">$75 - $100</a></li>
+                      <li><a data-lower="100" data-upper="150" class="selectedPrice">$100 - $150</a></li>
+                      <li><a data-lower="150" data-upper="200" class="selectedPrice">$150 - $200</a></li>
+                      <li><a data-lower="250" data-upper="300" class="selectedPrice">$200 - $250</a></li>
+                      <li><a data-lower="250" data-upper="1000000" class="selectedPrice">Above $250</a></li>
+                    </ul>
+                  </p>
+              </div>
+          </div>
+      </div>
+
+
+        </div>
+        <div id="search-results" class="nine columns">
+
+          <div class="row">
+            <div class="u-full-width">
+              <div class="gallery gallery-square no-bottom">
+              {{#each items}}
+                <a class="show-gallery animate-zoom" href="/item/{{_id}}"
+                 alt="img" title="Image Caption" data-sr-id="1"
+                 style="visibility: visible; -webkit-transform: scale(1); opacity: 1; transform: scale(1); opacity: 1; -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s;">
+                 <img class="preload-image responsive-image"
+                 data-original="{{src}}" alt="img"
+                 src="{{src}}" style="display: block;">
+                </a>
+              {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="decoration decoration-margins">
+
+
+
+</div>
+
+<div class="footer footer-dark" style="background: white;">
+    <a href="index.html" class="footer-logo scale-hover"></a>
+    <p>
+        Simplicity and complexity packed into a beautiful,
+        feature filled, powerful, gorgeous mobile template.
+    </p>
+    <div class="footer-socials">
+        <a href="#" class="icon icon-round icon-xs facebook-bg"><i class="ion-social-facebook"></i></a>
+        <a href="#" class="icon icon-round icon-xs twitter-bg"><i class="ion-social-twitter"></i></a>
+        <a href="#" class="icon icon-round icon-xs google-bg"><i class="ion-social-googleplus"></i></a>
+        <a href="#" class="icon icon-round icon-xs phone-bg"><i class="ion-ios-telephone"></i></a>
+        <a href="#" class="icon icon-round icon-xs show-share-bottom bg-blue-light"><i class="ion-android-share"></i></a>
+    </div>
+    <div class="decoration"></div>
+    <p class="copyright-text">Copyright <span id="copyright-year"></span>. All Rights Reserved.</p>
+</div>
+
+
+
+</template>

@@ -1,0 +1,29 @@
+<template name="following">
+  <div class="row">
+    <div class="twelve columns">
+      {{#if Template.subscriptionsReady}}
+        {{#if users.count}}
+          {{#each users}}
+            {{> smallProfile user=this}}
+          {{/each}}
+        {{else}}
+          <div class="alert info">There are no users to display</div>
+        {{/if}}
+      {{else}}
+        <div class="text-center">Loading users...</div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="footer footer-dark" style="background: white;">
+    <a href="index.html" class="footer-logo scale-hover"></a>
+   
+    <div class="footer-socials">
+        <a href="#" class="icon icon-round icon-xs facebook-bg"><i class="ion-social-facebook"></i></a>
+        <a href="#" class="icon icon-round icon-xs twitter-bg"><i class="ion-social-twitter"></i></a>
+        <a href="#" class="icon icon-round icon-xs google-bg"><i class="ion-social-googleplus"></i></a>
+        <a href="#" class="icon icon-round icon-xs phone-bg"><i class="ion-ios-telephone"></i></a>
+        <a href="#" class="icon icon-round icon-xs show-share-bottom bg-blue-light"><i class="ion-android-share"></i></a>
+    </div>
+    <div class="decoration"></div>
+</div>
+</template>

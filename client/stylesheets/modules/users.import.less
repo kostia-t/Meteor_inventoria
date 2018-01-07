@@ -1,0 +1,73 @@
+.profile {
+  .avatar-center {
+    margin: 0 auto;
+  }
+
+  h1.username {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 3.0rem;
+  }
+
+  #socialMediaAccounts {
+    display: flex;
+    justify-content: space-around;
+    .smAccount {
+      &:hover {
+        transform: scale(1.2);
+      }
+      img {
+        width: 75px;
+        height: 75px;
+        margin-top: -15px;
+      }
+    }
+  }
+
+  textarea.socialMedia {
+    min-height: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  textarea.biography {
+    height: 200px;
+  }
+
+  input[type="submit"].disabled,
+  input[type="submit"].disabled:hover {
+    opacity: 0.3;
+    cursor: default;
+    background-color: #33C3F0;
+    border-color: #33C3F0;
+  }
+}
+
+.small-profile {
+  padding: 10px;
+  border: 1px solid #EEEEEE;
+  margin-bottom: 20px;
+  .avatar, p {
+    margin-right: 20px;
+  }
+}
+
+.presence {
+  &.online {
+    margin-left: 5px;
+    color: green;
+  }
+
+  &.offline {
+    margin-left: 5px;
+    color: gray;
+  }
+}
+
+.avatar .avatar-image {
+  z-index: 2 !important;
+  background-color: #fff;
+  clear: both;
+  height:100%;
+  width:100%;
+}

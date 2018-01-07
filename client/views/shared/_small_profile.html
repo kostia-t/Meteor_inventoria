@@ -1,0 +1,27 @@
+<template name="smallProfile">
+  <div class="small-profile" style="width: 100%;">
+    <a href="{{pathFor 'profile' _id=this.user._id}}">
+        
+        {{#if imgSrc this.user._id}} 
+        <div class="avatar avatar-circle u-pull-left">
+            <img class="avatar-image" src="{{imgSrc this.user._id}}" alt="avatar" onerror="this.style.display='none';">
+            <span class="avatar-initials" style="background-color: #aaa; color: #fff;">T</span>
+          </div>
+        
+        {{else}}
+        
+        <div class="avatar avatar-circle u-pull-left">
+            <img class="avatar-image" src="/images/profile.png" alt="avatar" onerror="this.style.display='none';" style="-display: none;">
+          </div>
+        
+        {{/if}}
+      
+    </a>
+    <a href="{{pathFor 'profile' _id=this.user._id}}" class="u-pull-left">@{{this.user.username}}</a>
+     <span class="fa {{#if this.user.status.online}} fa-circle presence online {{else}} fa-circle-o presence offline {{/if}}"></span>
+    <div class="u-pull-right">
+      {{> followButton user=this.user}}
+    </div>
+    <div class="clear"></div>
+  </div> 
+</template>

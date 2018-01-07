@@ -1,0 +1,6 @@
+<!-- <div id="singleMessageReplyArea">
+      <form data-id="reply-message-form">
+        <textarea class="u-full-width message-body-form" rows="1" placeholder="Write something..." data-id="reply-body"></textarea>
+        <input type="submit" class="button-primary u-pull-right" data-id="reply-submit" value="Send">
+      </form>
+    </div> -->

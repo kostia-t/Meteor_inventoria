@@ -1,0 +1,88 @@
+<template name="layout">
+  {{> header}}
+  <div id="page-transitions">
+
+
+    <div id="sidebar-tap-close"></div>
+
+    <div id="sidebar-left">
+        <div class="sidebar-scroll">
+            <a href="index.html" class="sidebar-logo sidebar-item"></a><a href="#" class="sidebar-item sidebar-close" style="    color: #003369;"><i class="ion-ios-close-empty"></i></a>
+            <div class="sidebar-item sidebar-divider"></div>
+            <div class="sidebar-menu">
+                <a class="sidebar-item" href="{{pathFor 'home'}}"><i class="ion-ios-home-outline"></i>Home</a>
+
+                <a class="sidebar-item" href="{{pathFor 'search'}}"><i class="ion-ios-search"></i>Search</a>
+
+                <a class="sidebar-item" href="{{pathFor 'Inventory'}}"><i class="ion-ios-albums-outline"></i>Inventory</a>
+
+                <a class="sidebar-item" href="{{pathFor 'feed'}}"><i class="ion-ios-list-outline"></i>Timeline</a>
+
+                <a class="sidebar-item" href="{{pathFor 'following'}}"><i class="ion-ios-person-outline"></i>Following</a>
+
+                <a class="sidebar-item" href="{{pathFor 'follower'}}"><i class="ion-ios-people-outline"></i>Followers</a>
+
+                <a class="sidebar-item" href="{{pathFor 'messages'}}"><i class="ion-ios-chatboxes-outline"></i>Messages</a>
+
+                <a class="sidebar-item" href="{{pathFor 'updateProfile'}}"><i class="ion-ios-settings"></i>Settings</a>
+
+                <a class="sidebar-item" href="page-blog.html"><i class="ion-ios-time-outline"></i>Notificatons</a>
+
+                <a class="sidebar-item" href="page-videos.html"><i class="ion-ios-book-outline"></i>Blog</a>
+                {{#if currentUser}}
+                <a id="logoutitem" class="sidebar-item" data-id="sign-out" href=""><i class="ion-log-out"></i>Sign Off</a>
+                {{/if}}
+            </div>
+            <div class="sidebar-item sidebar-divider"></div>
+            <div class="sidebar-item sidebar-copyright">
+                <em>Copyright <span class="copyright-year"></span>. All rights reserved.</em>
+            </div>
+            <div class="sidebar-item sidebar-divider"></div>
+        </div>
+    </div>
+
+
+    <div id="sidebar-right">
+          <div class="sidebar-scroll">
+              <div class="sidebar-small-menu">
+                  <a href="#" class="sidebar-item"><i class="ion-social-facebook-outline"></i><em>Facebook</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-social-twitter-outline"></i><em>Twitter</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-social-googleplus-outline"></i><em>Google +</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-social-instagram-outline"></i><em>Instagram</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-social-youtube-outline"></i><em>YouTube</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-social-pinterest-outline"></i><em>Pinterest</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-social-linkedin-outline"></i><em>LinkedIn</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-social-skype-outline"></i><em>Skype</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-social-whatsapp-outline"></i><em>WhatsApp</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-ios-telephone-outline"></i><em>Call Us</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-ios-chatbubble-outline"></i><em>Text Us</em></a>
+                  <a href="#" class="sidebar-item"><i class="ion-ios-email-outline"></i><em>Mail Us</em></a>
+              </div>
+          </div>
+      </div>
+
+
+    <div id="page-content" class="header-clear" style="min-height: {{instance.minHeight.get}}">
+    {{# if currentUser}}
+      <div class="row">
+        <div class="four columns" style="display:none;">
+          {{> navigation}}
+        </div>
+        <div class="twelve columns">
+          {{> Template.dynamic template=main}}
+        </div>
+      </div>
+    {{else}}
+      <div class="row">
+        <div class="four columns offset-by-four">
+          {{> Template.dynamic template=main}}
+        </div>
+      </div>
+    {{/if}}
+  	{{> action}}
+    </div>
+
+  </div>
+
+  {{> footer}}
+</template>

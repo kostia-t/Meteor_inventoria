@@ -1,0 +1,29 @@
+<template name="footer">
+  <footer class="footer" style=" position: fixed; bottom: 0px; background-color: #fbfafa; display: block; width: 100%; padding:0px; z-index:9999;">
+    <div id="footermenu" class="container" style="
+    width: 100%;
+">
+      <div class="row">
+        <div class="twelve columns">
+          <div class="text-center">
+            <div style="display: table;table-layout: fixed;white-space: no-wrap;margin: 0;padding: 0;width: 100%;height: 30px;background-color: #fbfafa; margin-top: 0.5em;margin-bottom: 0.5em;">
+				<a href="{{pathFor 'feed'}}" class="{{activeIfRouteNameIs 'feed'}}" style="color: #e75854; display: table-cell;  width: auto;  border-radius: 0; text-align: center;  vertical-align: middle; color: #003369; font-size: 2em;"><i class="ion-ios-list-outline"></i></a>
+				
+                <a href="{{pathFor 'search'}}" style=" color: #e75854; display: table-cell;  width: auto;  border-radius: 0; text-align: center;  vertical-align: middle; color: #003369; font-size: 2em;"><i class="ion-ios-search"></i></a>							 
+				
+                <a href="/addToInventory" class="{{activeIfRouteNameIs 'messages'}};" style="color: #e75854;display: table-cell;width: auto;border-radius: 0;text-align: center;vertical-align: middle;font-size: 2em; color: #003369; font-size: 2em;"><i class="ion-ios-plus-empty"></i></a>
+							
+                <a href="{{pathFor 'messages'}}" class="{{activeIfRouteNameIs 'messages'}}" style=" color: #e75854; display: table-cell;  width: auto;  border-radius: 0; text-align: center;  vertical-align: middle; color: #003369; font-size: 2em;"><i class="ion-ios-chatboxes-outline"></i></a>
+                
+                <a href="{{pathFor 'home'}}" style=" color: #e75854; display: table-cell;  width: auto;  border-radius: 0; text-align: center;  vertical-align: middle; color: #003369; font-size: 2em;"><i class="ion-ios-person-outline"></i></a>
+  
+              </div>
+          </div>
+          <div class="text-center">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>

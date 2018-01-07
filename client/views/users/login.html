@@ -1,0 +1,31 @@
+<template name="login">
+
+    <div id="page-content" class="header-clear" style="transition: all 500ms ease; min-height: 724px;">
+    <form id="login-form" action="action">
+    <div id="login-form" class="page-login content full-bottom">
+        <a href="#" class="page-login-logo"><img class="preload-image" data-original="images/preload-logo.png" src="images/preload-logo.png" style="display: block;"></a>
+        <div class="page-login-input">
+            <i class="login-icon ion-person"></i>
+            <input id="login-email" type="text" value="Username" onfocus="if (this.value=='Username') this.value = ''" onblur="if (this.value=='') this.value = 'Username'">
+        </div>                
+        <div class="page-login-input">
+            <i class="login-icon ion-android-lock"></i>
+            <input id="login-password" type="password" value="password" onfocus="if (this.value=='password') this.value = ''" onblur="if (this.value=='') this.value = 'password'">
+        </div>
+        <div class="page-login-links">
+            <a href="/passwordRecovery" class="page-login-forgot"><i class="ion-ios-eye"></i>Forgot Credentials</a>
+            <a href="/register" class="page-login-create">Create Account<i class="ion-log-in"></i></a>
+            <div class="clear"></div>
+        </div>            
+
+        <input type="submit" id="login-button" value="Sign in" class="button button-green button-icon button-full half-top full-bottom"/>
+                 
+    </div>
+
+    <div class="decoration decoration-margins"></div>
+
+    
+     </form>  
+
+</div>
+</template>

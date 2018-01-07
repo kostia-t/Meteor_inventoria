@@ -1,0 +1,50 @@
+<template name="Inventory">
+
+  <div class="heading-block bg-3">
+        <h2 class="thin no-bottom animate-zoom" data-sr-id="10" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; background: rgba(255, 255, 255, 0.03);
+    color: white;">Inventory</h2>
+        <h5 class="small-text animate-fade" data-sr-id="3" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; transition: transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; visibility:hidden;">With smaller submenu text!</h5>
+        <p class="larger-text thin half-top full-bottom animate-fade" data-sr-id="4" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 0.7;transform: translateY(0) scale(1); opacity: 0.7;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; visibility:hidden;">
+            Items: 30
+        </p>
+        <a href="/addToInventory" class="button-ghost button-center-large button-bold button-round animate-bottom" data-sr-id="1" style="; visibility: visible;  -webkit-transform: translateY(0) scale(1); opacity: 1;transform: translateY(0) scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; transition: transform 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s, opacity 0.5s cubic-bezier(0.1, 0.2, 0.1, 1) 0s; ">ADD AN ITEM</a>
+        <div class="overlay dark-overlay"></div>
+    </div>
+
+
+
+    <div class="gallery-blocks">
+      {{#each items}}
+        <a class="show-gallery animate-fade" href="/item/{{_id}}" alt="img" title="Image Caption" data-sr-id="15" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; transition: transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s; ">
+          <em class="overlay"></em>
+            <strong>{{description}}</strong>
+            <img class="preload-image responsive-image" data-original="{{src}}" alt="img" src="{{src}}" style="display: block;">
+        </a>
+        {{/each}}
+        <div class="clear"></div>
+    </div>
+
+    <div class="decoration decoration-margins"></div>
+
+
+
+    <div class="footer footer-dark" style="display:none;">
+        <a href="index.html" class="footer-logo scale-hover" data-sr-id="6" style="; visibility: visible;  -webkit-transform: scale(2.1); opacity: 0;transform: scale(2.1); opacity: 0;"></a>
+        <p data-sr-id="7" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 0;transform: scale(1); opacity: 0;">
+            Simplicity and complexity packed into a beautiful,
+            feature filled, powerful, gorgeous mobile template.
+        </p>
+        <div class="footer-socials" data-sr-id="8" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 0;transform: scale(1); opacity: 0;">
+            <a href="#" class="icon icon-round icon-xs facebook-bg"><i class="ion-social-facebook"></i></a>
+            <a href="#" class="icon icon-round icon-xs twitter-bg"><i class="ion-social-twitter"></i></a>
+            <a href="#" class="icon icon-round icon-xs google-bg"><i class="ion-social-googleplus"></i></a>
+            <a href="#" class="icon icon-round icon-xs phone-bg"><i class="ion-ios-telephone"></i></a>
+            <a href="#" class="icon icon-round icon-xs show-share-bottom bg-blue-light"><i class="ion-android-share"></i></a>
+        </div>
+        <div class="decoration"></div>
+        <p class="copyright-text" data-sr-id="9" style="; visibility: visible;  -webkit-transform: scale(1); opacity: 0;transform: scale(1); opacity: 0;">Copyright <span id="copyright-year">2017</span>. All Rights Reserved.</p>
+    </div>
+
+
+
+</template>
